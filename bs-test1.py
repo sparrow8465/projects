@@ -19,4 +19,3 @@ p2 = p1.next_sibling.next_sibling
 print(h1.string)
 print(p1.string)
 print(p2.string)
-hi
