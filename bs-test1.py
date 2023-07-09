@@ -11,7 +11,6 @@ html = """
 #html 분석
 soup = BeautifulSoup(html, 'html.parser')
 #print(soup)
-
 #원하는 부분 추출
 h1 = soup.html.body.h1
 p1 = soup.html.body.p
@@ -20,3 +19,4 @@ p2 = p1.next_sibling.next_sibling
 print(h1.string)
 print(p1.string)
 print(p2.string)
+hi
