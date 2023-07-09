@@ -1,0 +1,72 @@
+docker 명령어
+
+    //docker 데몬이 실행중인지 확인
+    docker info
+
+    //docker 로그인
+    docker login
+
+    //실행했던 컨테이너 정보
+    docker ps -a
+
+    //docker에 저장된 이미지 확인
+    docker images
+
+    //docker 컨테이너 실행
+    docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+    docker run -it mlearn:init
+    docker exec -it ubuntu_server /bin/bash
+
+    //컨테이너 상태를 저장
+    docker commit [OPTIONS] CONTAINER IMAGE
+    ex) docker commit my-container my-image -> my-container를 my-image로 저장
+
+    //외장하드 이용하듯이 컨테이너 실행시 추가 폴더 마운트
+    docker run -it -v /c/Users/dlawl/docker:/home/jinjo/python/docker mlearn:init
+    
+    //컨테이너 명 변경
+    docker rename old new
+    //컨테이너 종료없이 나가기
+    Ctrl + P + Q
+    //컨테이너 들어가기
+     docker attach [컨테이너명]
+
+//sudo 설치
+    apt-get update
+    apt install sudo
+    sudo apt update
+
+
+
+/사용자 설정
+
+    //root계정 비밀번호 변경
+    sudo passwd root
+
+    //vim 설치
+    sudo apt-get update
+    sudo apt-get install vim
+
+    //계정 생성
+    useradd [username]
+    passwd [username]
+    mkdir -p /home/[username]
+    chown -R [username]:[username] /home/[username]
+
+    //bash쉘 으로 변환하기
+    su - [username]
+
+//기본 컨테이너 다운..
+    docker pull continuumio/miniconda3
+    docker run -it continuumio/miniconda3 /bin/bash
+    찾아보니 debian임
+    usermod -aG sudo [username] //sudo 권한 부여
+
+    python3 -m venv myenv 로 가상화가능한 폴더 생성
+    . myenv/bin/activate 로 가상화 활성화
+    deactivate 패키지 종료
+
+    pip install beautifulsoup4 로 패키지 설치
+    pip install requests
+
+    
